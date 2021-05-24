@@ -32,10 +32,10 @@
                 <p>following</p>
                 {{ user.following }}
               </div>
-              <div class="col-sm">
+              <!-- <div class="col-sm">
                 <p>Email</p>
                 {{ user.email }}
-              </div>
+              </div> -->
               <div class="col-sm">
                 <p>Location</p>
                 {{ user.location }}
@@ -50,7 +50,7 @@
   <div class="container" style="text-align: center;">
 
     <div class="row">
-      <div class="col-md-6" *ngFor="let repos of userRep" id="card">
+      <div class="col-md-6" *ngFor="let repo of repos" id="card">
         <div class="card mt-3" id="card2">
 
           <h2 class="text-center pt-4 para">

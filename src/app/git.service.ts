@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { from } from 'rxjs';
+// import { from } from 'rxjs';
 import { User } from '../app/user.service';
 import { Repository } from '../app/repository.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -38,11 +38,11 @@ export class GitService {
         this.user = response;
 
         resolve();
-        console.log(this.user)
+        // console.log(this.user)
       },
         (error) => {
           reject();
-          console.log(error)
+          // console.log(error)
         }
       );
     });
@@ -59,7 +59,7 @@ export class GitService {
     }
 
 
-    let url = environment.apiUrl + user + '/repos' + '?access_token=' + environment.apiKey;
+    let url = environment.apiKey + user + '/repos' + '?access_token=' + environment.apiUrl;
     let promise = new Promise<void>((resolve, reject) => {
       this.http.get<apiResponse>(url).toPromise().then(response => {
         this.userRep = response;
@@ -67,7 +67,7 @@ export class GitService {
 
       }, error => {
         reject();
-        console.log(error)
+        // console.log(error)
       })
 
     });
